@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Services\TelegramBotService;
 
 class TelegramBotRun extends Command
 {
@@ -29,7 +30,7 @@ class TelegramBotRun extends Command
      */
     public function __construct(TelegramBotService $telegramBotService)
     {
-        $this->telegramBotService = $telegramBotService;
+        $this->telegramBotService = app(TelegramBotService::class);
         parent::__construct();
     }
 
@@ -41,7 +42,8 @@ class TelegramBotRun extends Command
     public function handle()
     {
         $this->telegramBotService->bootEvents();
-        $this->telegramBotService->listen();
+        $this->comment('Telegram bot started');
+        $this->telegramBotService->polling();
         return 0;
     }
 }

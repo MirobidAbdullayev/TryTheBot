@@ -22,8 +22,8 @@ class TelegramBotService
         });
     }
 
-    public function listen()
+    public function polling()
     {
-        $this->bot->listen();
+        $this->bot->polling();
     }
 }

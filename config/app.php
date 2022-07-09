@@ -161,7 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        \App\Services\TelegramBotService::class,
+        \App\Providers\TelegramBotServiceProvider::class,
 
         /*
          * Package Service Providers...
