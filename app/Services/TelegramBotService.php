@@ -15,6 +15,15 @@ class TelegramBotService
         $this->bot = $bot;
     }
 
+    public function bootMiddlewares()
+    {
+        $this->bot->middlewares([
+            function (Context $ctx, callable $next){
+                
+            }
+        ]);
+    }
+
     public function bootEvents()
     {
         $this->bot->onCommand('start', function (Context $ctx){
