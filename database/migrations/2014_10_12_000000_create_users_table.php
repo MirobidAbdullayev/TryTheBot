@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('username')->nullable();
             $table->string('password')->nullable();
+            $table->string('scene')->default('');
             $table->unsignedBigInteger('telegram_id')->nullable();
             $table->rememberToken();
             $table->timestamps();

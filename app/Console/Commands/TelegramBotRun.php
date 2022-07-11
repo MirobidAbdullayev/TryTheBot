@@ -41,7 +41,7 @@ class TelegramBotRun extends Command
      */
     public function handle()
     {
-        $this->telegramBotService->bootEvents();
+        $this->telegramBotService->boot();
         $this->comment('Telegram bot started');
         $this->telegramBotService->polling();
         return 0;
